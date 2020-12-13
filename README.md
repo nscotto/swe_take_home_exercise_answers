@@ -11,6 +11,7 @@ Otherwise I used python 3.9 and installed flask 1.1 as well as urllib3 version 1
 Using conda:
 ```bash
 conda env create -f environment.yaml
+conda activate flask
 ```
 ## Verification
 
