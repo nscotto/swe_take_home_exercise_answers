@@ -24,5 +24,5 @@ python calculator.py
 python app.py
 ```
 
-then go to your browser, [http://localhost:5000](localhost:5000)
+then go to your browser, [localhost:5000](http://localhost:5000)
 
