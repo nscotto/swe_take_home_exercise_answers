@@ -1,0 +1,32 @@
+<html>
+<body>
+<h1>Calculator</h1>
+<input type="radio" id="infix" name="mode" value="infix">
+<label for="infix">Infix</label><br>
+<input type="radio" id="prefix" name="mode" value="prefix">
+<label for="prefix">Prefix</label><br>
+<input id="operation" type="text" size="30" value="{{ operation }}"/>
+<input type="button" id="compute" value="compute" onclick="compute()"/>
+<p>{{ result }}</p>
+<script>
+// keep previous mode based on url
+var mode = "{{ mode }}" == "prefix" ? 1 : 0
+var radios = document.getElementsByName("mode")
+radios[mode].checked = true
+
+// compute input
+function compute(){
+    var operation = document.getElementById("operation").value
+    var mode = document.getElementsByName("mode")
+    mode = mode[0].checked ? "infix" : "prefix"
+
+    const params = new URLSearchParams({
+        mode: mode,
+        op: operation,
+    });
+    
+    window.location.href = encodeURI('?'.concat(params.toString()))
+}
+</script>
+</body>
+</html>
